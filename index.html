@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADStudio-App - تحميل</title>
+    <link rel="icon" href="icon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+       :root {
+            --primary-cyan: #00e5ff;
+            --primary-green: #0a7e58;
+            --dark-bg: #05070a;
+            --accent-cyan: #00d2ff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary-cyan), var(--primary-green));
+            border-radius: 20px;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #f1f5f9;
+            font-family: 'Tajawal', sans-serif;
+            background-image:
+                radial-gradient(circle at 50% -20%, rgba(0, 210, 255, 0.15), transparent),
+                radial-gradient(circle at 0% 100%, rgba(157, 80, 187, 0.05), transparent);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 229, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-gradient:hover {
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        .pulse-animation { animation: pulse-border 2s infinite; }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 210, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
+        }
+
+        .screenshot-container img {
+            height: 250px;
+            width: auto;
+            flex-shrink: 0;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            transition: 0.3s;
+        }
+        .screenshot-container img:hover {
+            border-color: var(--accent-cyan);
+            transform: scale(1.03);
+        }
+
+        .modal-bg{position:fixed;inset:0;background:rgba(5,7,10,.8);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:50;padding:1rem}
+        .modal-bg.show{display:flex}
+        .modal-box{max-width:28rem;width:100%;text-align:center;padding:2.5rem 2rem;background:#0d1117;border:1px solid rgba(0,229,255,.3);border-radius:28px;box-shadow:0 0 60px rgba(0,210,255,.2);animation:pop .3s ease}
+        @keyframes pop{from{opacity:0;transform:scale(.92) translateY(10px)}to{opacity:1;transform:none}}
+        .spin{width:64px;height:64px;margin:0 auto 1.25rem;border-radius:50%;border:4px solid rgba(255,255,255,.08);border-top-color:var(--primary-cyan);animation:sp 1s linear infinite;display:flex;align-items:center;justify-content:center}
+        @keyframes sp{to{transform:rotate(360deg)}}
+        .spin i{animation:sp 1s linear infinite reverse}
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="flex flex-wrap justify-between items-center gap-8 mb-16">
+            <div class="flex items-center gap-6">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <img src="logo.png" alt="ADStudio-App" class="relative w-24 h-24 object-contain rounded-2xl bg-[#0d1117] p-2" style="image-rendering: pixelated;">
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-5xl font-black tracking-tight text-white">
+                        ADStudio-App
+                    </h1>
+                    <p class="text-cyan-400 font-bold tracking-wider text-sm mt-3">Create. Design. Launch.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+                <a href="#" data-dl="1" class="px-10 py-4 btn-gradient pulse-animation text-white rounded-2xl flex items-center gap-5 shadow-2xl">
+                    <i class="fas fa-download text-2xl"></i>
+                    <div class="text-right">
+                        <p class="text-sm font-black leading-none">تحميل ADStudio-App</p>
+                        <p class="text-[10px] opacity-70 mt-1 font-medium">ملف WinRAR (.rar)</p>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="screenshot-container flex gap-6 overflow-x-auto pb-10 mb-16">
+            <img src="screen1.jpg" alt="صورة 1 - ADStudio-App">
+            <img src="screen2.jpg" alt="صورة 2 - ADStudio-App">
+            <img src="screen3.jpg" alt="صورة 3 - ADStudio-App">
+            <img src="screen4.jpg" alt="صورة 4 - ADStudio-App">
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+            <div class="lg:col-span-2 space-y-10">
+                <div class="video-container overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+                    <video autoplay muted loop playsinline controls class="w-full">
+                        <source src="AD_Studio_Ad_v2-subtitled.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <section>
+                    <h2 class="text-3xl font-black text-white mb-6 flex items-center gap-4">
+                        <span class="w-12 h-1 bg-cyan-500 rounded-full"></span>
+                        المميزات
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                            <i class="fas fa-rocket text-cyan-400 text-2xl mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">من الفكرة إلى الإطلاق</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">إعلانات وفيديوهات وتصاميم جاهزة في دقائق.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                            <i class="fas fa-microphone text-purple-400 text-2xl mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">سجّل وأنشئ وانشر</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">كل ما تحتاجه في استوديو واحد.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="space-y-6 lg:sticky lg:top-10">
+                <div class="glass-card p-8 text-center">
+                    <img src="logo.png" alt="" class="w-16 h-16 mx-auto mb-4 rounded-xl" style="image-rendering: pixelated;">
+                    <h3 class="text-xl font-black mb-2">ADStudio-App</h3>
+                    <p class="text-gray-400 text-sm mb-6">Create ads that stand out.</p>
+                    <a href="#" data-dl="1" class="block w-full py-4 btn-gradient text-white rounded-2xl font-bold text-sm">
+                        <i class="fas fa-download ml-2"></i> تحميل الآن
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="mt-20 flex flex-col md:flex-row justify-between items-center gap-6 pb-12 text-gray-600 font-medium border-t border-white/5 pt-10">
+            <p class="text-xs tracking-widest uppercase">© 2026 ADStudio-App</p>
+            <div class="flex gap-8 text-sm">
+                <a href="#" class="hover:text-cyan-400 transition-colors">سياسة الخصوصية</a>
+                <a href="#" class="hover:text-cyan-400 transition-colors">الدعم الفني</a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="dlModal" class="modal-bg">
+        <div class="modal-box">
+            <div class="spin"><i class="fas fa-download text-cyan-400 text-xl"></i></div>
+            <h3 class="text-2xl font-black text-white mb-3">جاري بدء التحميل...</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-2">حجم الملف <span class="text-cyan-400 font-bold">247 MB</span> لذلك قد تعرض Google رسالة "لا يمكن فحص الملف".</p>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">هذا طبيعي، اضغط <span class="text-white font-bold">Download anyway</span> لإكمال التحميل.</p>
+            <a id="dlGo" href="https://drive.usercontent.google.com/download?id=1gOEDWBu-5owl_Lqn7ZcHGka7KYSWL0Ap&export=download&confirm=t" class="block w-full py-3 btn-gradient text-white rounded-2xl font-bold text-sm mb-3"><i class="fas fa-download ml-2"></i> لم يبدأ التحميل؟ اضغط هنا</a>
+            <button id="dlClose" class="text-gray-500 hover:text-white text-sm transition-colors">إغلاق</button>
+        </div>
+    </div>
+<script>
+(function(){
+  var m=document.getElementById('dlModal'),go=document.getElementById('dlGo');
+  document.querySelectorAll('[data-dl]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();m.classList.add('show');
+      setTimeout(function(){window.location.href=go.href;},1200);
+    });
+  });
+  document.getElementById('dlClose').onclick=function(){m.classList.remove('show');};
+  m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('show');});
+})();
+</script>
+</body>
+</html>
